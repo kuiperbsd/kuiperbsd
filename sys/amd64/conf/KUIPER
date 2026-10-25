@@ -1,0 +1,6 @@
+include GENERIC
+ident   KUIPER
+
+
+options P9FS
+EOF
