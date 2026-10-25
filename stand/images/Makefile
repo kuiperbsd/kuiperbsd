@@ -1,7 +1,8 @@
 .include <bsd.init.mk>
 
 FILES+=	freebsd-brand-rev.png freebsd-brand.png freebsd-install-brand-rev.png \
-	freebsd-logo-rev.png
+	freebsd-logo-rev.png \  
+        kuiperbsd-brand.png kuiperbsd-logo.png
 
 FILESDIR=  /boot/images
 
