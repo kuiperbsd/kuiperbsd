@@ -35,6 +35,7 @@ local screen = require("screen")
 local drawer = {}
 
 local fbsd_brand
+local kuiper_brand
 local none
 
 local menu_name_handlers
@@ -320,7 +321,7 @@ local function drawbox()
 	local y = menu_position.y - 1
 	local w = frame_size.w
 	local menu_header = loader.getenv("loader_menu_title") or
-	    "Welcome to FreeBSD"
+	    "Welcome to KuiperBSD"
 	local menu_header_align = loader.getenv("loader_menu_title_align")
 	local menu_header_x
 
@@ -464,6 +465,17 @@ fbsd_brand = {
 " | |   | | |    |    ||     |      |      |",
 " |_|   |_|  \\___|\\___||____/|_____/|_____/ "
 }
+
+kuiper_brand = {
+"  _  __     _                 ____  _____ _____  ",
+" | |/ /    (_)               |  _ \\/ ____|  __ \\ ",
+" | ' /_   _ _ _ __   ___ _ __| |_) | (___ | |  | |",
+" |  <| | | | | '_ \\ / _ \\ '__|  _ < \\___ \\| |  | |",
+" | . \\ |_| | | |_) |  __/ |  | |_) |____) | |__| |",
+" |_|\\_\\__,_|_| .__/ \\___|_|  |____/|_____/|_____/ ",
+"             |_|                                  "
+}
+
 none = {""}
 
 menu_name_handlers = {
@@ -498,6 +510,14 @@ menu_name_handlers = {
 branddefs = {
 	-- Indexed by valid values for loader_brand in loader.conf(5). Valid
 	-- keys are: graphic (table depicting graphic)
+	["kuiper"] = {
+		ascii = {
+			image = kuiper_brand,
+		},
+		fb = {
+			image = "/boot/images/kuiperbsd-brand.png",
+		},
+	},
 	["fbsd"] = {
 		ascii = {
 			image = fbsd_brand,
@@ -541,9 +561,9 @@ default_shift = {x = 0, y = 0}
 shift = default_shift
 
 -- Module exports
-drawer.default_brand = 'fbsd'
-drawer.default_color_logodef = 'orb'
-drawer.default_bw_logodef = 'orbbw'
+drawer.default_brand = 'kuiper'
+drawer.default_color_logodef = 'kuiper'
+drawer.default_bw_logodef = 'kuiperbw'
 -- For when things go terribly wrong; this def should be present here in the
 -- drawer module in case it's a filesystem issue.
 drawer.default_fallback_logodef = 'none'
@@ -597,7 +617,7 @@ else
 		bottom_left	= "\xC0",
 		top_right	= "\xBF",
 		bottom_right	= "\xD9",
-        }
+	}
 	drawer.frame_styles["double"] = {
 		horizontal	= "\xCD",
 		vertical	= "\xBA",
