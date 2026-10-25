@@ -2,7 +2,7 @@ KuiperBSD Source:
 ---------------
 This is the top level of the KuiperBSD source directory.
 
-KuiperBSD is a fork of FreeBSD operating system and is an attempt to modernize and improve BSD without breaking any of it's current functionality
+KuiperBSD is a fork of FreeBSD operating system and is an attempt to modernize, improve and optimize BSD without breaking any of it's current functionality
 
 It's nameed after the KuiperBelt (the icy frontier surrounding Pluto , The 9th planet).
 
@@ -12,7 +12,7 @@ It's nameed after the KuiperBelt (the icy frontier surrounding Pluto , The 9th p
 | Per-Process Namespaces | Enable unprivileged, mutable per-process VFS views and union directory overlays via `rfork(RFNAMEG)` without altering the global mount table for standard processes. |
 | Synthetic `/net` Stack | Expose the kernel network stack as a Plan 9-style `/net` file hierarchy (`/net/tcp/clone`, `ctl`, `data`) backed directly by native BSD kernel sockets and `kqueue`. |
 | In-Kernel 9P (`StyxVFS`) | Provide a lightweight synthetic filesystem layer to replace opaque `ioctl()` and `sysctl()` interfaces with clean, network-transparent 9P file trees. |
-| Hardware Telemetry (`/hw`) | Map open hardware controllers (starting with the Framework Laptop Embedded Controller) into readable and writable synthetic files (`/hw/framework/battery/ctl`). |
+| Hardware Telemetry (`/hw`) | Map open hardware controllers (starting with Raspberry Pi) into readable and writable synthetic files (`/hw/framework/battery/ctl`). |
 | Zero-Breakage ABI | Maintain 100% FreeBSD KBI/ABI and POSIX compatibility so existing binaries, `pkg` repositories, and Jails run unmodified at native speed. |
 
 
