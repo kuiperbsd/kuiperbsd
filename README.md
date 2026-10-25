@@ -2,7 +2,7 @@ KuiperBSD Source:
 ---------------
 This is the top level of the KuiperBSD source directory.
 
-KuiperBSD is an attempt to modernize and improve BSD without breaking any of it's current functionality
+KuiperBSD is a fork of FreeBSD operating system and is an attempt to modernize and improve BSD without breaking any of it's current functionality
 
 It's nameed after the KuiperBelt (the icy frontier surrounding Pluto , The 9th planet).
 
