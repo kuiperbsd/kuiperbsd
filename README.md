@@ -1,10 +1,20 @@
-FreeBSD Source:
+KuiperBSD Source:
 ---------------
-This is the top level of the FreeBSD source directory.
+This is the top level of the KuiperBSD source directory.
 
-FreeBSD is an operating system used to power modern servers, desktops, and embedded platforms.
-A large community has continually developed it for more than thirty years.
-Its advanced networking, security, and storage features have made FreeBSD the platform of choice for many of the busiest web sites and most pervasive embedded networking and storage devices.
+KuiperBSD is an attempt to modernize and improve BSD without breaking any of it's current functionality
+
+It's nameed after the KuiperBelt (the icy frontier surrounding Pluto , The 9th planet).
+
+## Goals
+| Subsystem | KuiperBSD Goal |
+| :--- | :--- |
+| Per-Process Namespaces | Enable unprivileged, mutable per-process VFS views and union directory overlays via `rfork(RFNAMEG)` without altering the global mount table for standard processes. |
+| Synthetic `/net` Stack | Expose the kernel network stack as a Plan 9-style `/net` file hierarchy (`/net/tcp/clone`, `ctl`, `data`) backed directly by native BSD kernel sockets and `kqueue`. |
+| In-Kernel 9P (`StyxVFS`) | Provide a lightweight synthetic filesystem layer to replace opaque `ioctl()` and `sysctl()` interfaces with clean, network-transparent 9P file trees. |
+| Hardware Telemetry (`/hw`) | Map open hardware controllers (starting with the Framework Laptop Embedded Controller) into readable and writable synthetic files (`/hw/framework/battery/ctl`). |
+| Zero-Breakage ABI | Maintain 100% FreeBSD KBI/ABI and POSIX compatibility so existing binaries, `pkg` repositories, and Jails run unmodified at native speed. |
+
 
 For copyright information, please see [the file COPYRIGHT](COPYRIGHT) in this directory.
 Additional copyright information also exists for some sources in this tree - please see the specific source directories for more information.
