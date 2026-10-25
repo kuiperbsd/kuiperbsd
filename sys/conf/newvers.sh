@@ -49,9 +49,9 @@
 #		like the -V command
 #
 
-TYPE="FreeBSD"
-REVISION="16.0"
-BRANCH="CURRENT"
+TYPE="KuiperBSD"
+REVISION="0.1"
+BRANCH="STYX-ALPHA"
 if [ -n "${BRANCH_OVERRIDE}" ]; then
 	BRANCH=${BRANCH_OVERRIDE}
 fi
